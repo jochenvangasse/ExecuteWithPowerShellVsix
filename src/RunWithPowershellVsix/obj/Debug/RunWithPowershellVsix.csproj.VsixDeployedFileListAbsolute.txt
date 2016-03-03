@@ -1,0 +1,4 @@
+C:\Users\Jochen\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jochen Van Gasse\RunWithPowershellVsix\1.0\\RunWithPowershellVsix.dll
+C:\Users\Jochen\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jochen Van Gasse\RunWithPowershellVsix\1.0\\RunWithPowershellVsix.pdb
+C:\Users\Jochen\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jochen Van Gasse\RunWithPowershellVsix\1.0\\RunWithPowershellVsix.pkgdef
+C:\Users\Jochen\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Jochen Van Gasse\RunWithPowershellVsix\1.0\\extension.vsixmanifest
