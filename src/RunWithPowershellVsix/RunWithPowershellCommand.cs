@@ -6,6 +6,7 @@
 
 using System;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -190,17 +191,22 @@ namespace RunWithPowershellVsix
         /// <param name="e">Event args.</param>
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "RunWithPowershellCommand";
+            IVsHierarchy hierarchy = null;
+            uint itemid = VSConstants.VSITEMID_NIL;
 
-            // Show a message box to prove we were here
-            VsShellUtilities.ShowMessageBox(
-                this.ServiceProvider,
-                message,
-                title,
-                OLEMSGICON.OLEMSGICON_INFO,
-                OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
+            if (!IsSingleProjectItemSelection(out hierarchy, out itemid)) return;
+            // Get the file path
+            string itemFullPath = null;
+            ((IVsProject)hierarchy).GetMkDocument(itemid, out itemFullPath);
+            var transformFileInfo = new FileInfo(itemFullPath);
+
+            // then check if the file is named '*.ps1'
+            bool isPs1 = transformFileInfo.Extension.EndsWith("ps1");
+
+            // if not leave the menu hidden
+            if (!isPs1) return;
+
+            Process.Start("powershell", "& '" + itemFullPath + "'");
         }
     }
 }
