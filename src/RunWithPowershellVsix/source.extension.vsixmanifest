@@ -2,8 +2,10 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="RunWithPowershellVsix.Jochen Van Gasse.670a6323-51b5-4445-bbe0-cd64e59dbf4b" Version="1.0" Language="en-US" Publisher="Jochen Van Gasse" />
-    <DisplayName>RunWithPowershellVsix</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <DisplayName>Run With PowerShell</DisplayName>
+    <Description xml:space="preserve">Run a ps1 powershell script file from Visual Studio</Description>
+    <Icon>Resources\powershell.png</Icon>
+    <Tags>powershell, ps1</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
